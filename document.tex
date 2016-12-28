@@ -1,3 +1,7 @@
+% Copyright (c) 2016 Ongun Kanat <ongun.kanat@gmail.com>
+% This document is a free software licensed under MIT license.
+% For redistribution details look at COPYING file.
+
 % 12pt and ISO A4 paper with title page add notitlepage for otherwise
 \documentclass[a4paper, 12pt, titlepage]{article}
 
@@ -217,12 +221,12 @@ or even we can include PDFs (tip: Save SVG images as PDF) and they can scale (tr
 		\State \Call{set-root}{$ T $,$ current $}
 		\State \Call{push}{$ S $,$ start $}
 		\While{\Call{not-empty}{S}}
-			\State $current \gets$ \Call{pop}{$ S $} 
+			\State $current \gets$ \Call{pop}{$ S $}
 			\If{\textbf{not} \Call{Contains}{$ V $, $ current $} }
 				\State \Call{insert}{$ V $, $ current $}
 				\ForAll{$ n $ : \Call{neighbors}{$ current $} }
 					\State \Call{push}{$ S $, $ n $}
-					\State \Call{insert-sub-node}{$ T $, $ current $, $ n $} 
+					\State \Call{insert-sub-node}{$ T $, $ current $, $ n $}
 					\Comment Insert node to subtree of $ current $
 				\EndFor
 			\EndIf
