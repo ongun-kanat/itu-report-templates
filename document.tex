@@ -1,0 +1,248 @@
+% 12pt and ISO A4 paper with title page add notitlepage for otherwise
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+% 2cm margin from all sides
+\usepackage[a4paper,margin=2cm]{geometry}
+
+% Use American English for dates etc.
+\usepackage[american]{babel}
+% If document is in Turkish then use
+% \usepackage[turkish]{babel}
+% or for both
+% \usepackage[turkish,american]{babel}
+
+% Indent at section beginnings
+\usepackage{indentfirst}
+
+% utf-8 support
+\usepackage[utf8]{inputenc}
+
+% Graphics for PDFTeX
+\usepackage[pdftex]{graphicx}
+
+% Figure placement
+\usepackage{float}
+
+% An enumeration package for flexible enumeration
+\usepackage{enumitem}
+
+% Courier monospace font
+\usepackage{courier}
+
+% Links, both local and external
+\usepackage{hyperref}
+\hypersetup{
+	unicode=true,
+	colorlinks=true,
+	urlcolor=blue,
+	citecolor=black,
+	menucolor=black,
+	linkcolor=black
+}
+
+% Figure captions are bold
+\usepackage[labelfont=bf]{caption}
+
+% Pseudocode
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+% Syntax highlighting simple
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,frame=lines,tabsize=4}
+\renewcommand{\lstlistingname}{Code}
+
+% Syntax higlighting (advanced)
+%\usepackage{minted}
+
+% Title, author and date info
+\title{My Glorious Report}
+\author{Besim Ongun Kanat \\ 150120000}
+\date{December 22, 2016}
+
+\begin{document}
+
+% For a generic title page one can use standard \maketitle command
+% It will use the title info above
+% \maketitle
+
+% The title page can be made by hand as below
+\begin{titlepage}
+	\begin{center}
+		\large{Istanbul Technical University \\ Faculty of Computer and Informatics \\ Computer Engineering Department} \\
+		\vspace{150pt}
+		\Large{BLG 100E \\ The Glorious \LaTeX \\ Report}  \\
+		\vspace{30pt}
+		\Large{\textbf{Group MadCoders}} \\
+		\large{Besim Ongun Kanat - 150120047} \\
+		\vspace{\fill} % Fill out until the page end
+		\large{December 2\textsuperscript{nd}, 2016}
+	\end{center}
+\end{titlepage}
+\pagenumbering{roman}
+\newpage
+\tableofcontents
+\newpage
+
+% For the ones who doesn't know: 1,2,..9 called West Arabic numbers
+\pagenumbering{arabic}
+\section{Introduction}
+I made a \LaTeX template to help my friends on creating good looking reports.
+
+\section{General stuff}
+\subsection{Text styles}
+You can make text \textbf{bold}, \textit{italic}, \underline{underlined} or in \texttt{typewriter fonts}. You can \textit{\textbf{use}} \texttt{them \textbf{combined}}
+
+\begin{center}
+	You can make paragraphs centered
+\end{center}
+
+\begin{flushright}
+	Or right aligned
+\end{flushright}
+
+\paragraph{The important paragraph:}
+We can create titled paragraphs
+
+\subsection{Enumeration and lists}
+With the help of \emph{enumitem} package we can create numbered lists as below:
+
+\begin{enumerate}[label=\arabic*]
+	\item Apples (We can use nested lists)
+	\begin{enumerate}[label=\Alph*)]
+		\item Starking
+		\item Golden
+	\end{enumerate}
+	\item Kiwis
+	\item and of course Bananas!
+\end{enumerate}
+
+We can also create unordered lists
+\begin{itemize}
+	\item Ford Prefect
+	\item Arthur Dent
+	\item Zaphod Beeblebrox
+\end{itemize}
+
+\subsection{Tables}
+
+Creating tables can become a bit annoying the [H] here ensures the table is displayed where it is defined.
+
+\begin{table}[H]
+	\label{table:music}
+	\caption{Table of great music}
+	\centering
+	\begin{tabular}{c | r | l |}
+		left column center aligned & center column right aligned & right column left aligned \\ % don't forget to end the line
+		\hline
+		\hline % Any number of horizontal lines
+		\hline
+		I want to break free & We're the champions & Bohemian Rhapsody \\
+		\hline
+	\end{tabular}
+\end{table}
+
+% As wikibooks suggests we can draw more complex tables
+
+\begin{table}[H]
+	\begin{flushright}
+		\begin{tabular}{|r|l|}
+			\hline
+			7C0 & hexadecimal \\
+			3700 & octal \\ \cline{2-2}
+			11111000000 & binary \\
+			\hline \hline
+			1984 & decimal \\
+			\hline
+		\end{tabular}
+	\end{flushright}
+\end{table}
+
+For more info consult \href{https://en.wikibooks.org/wiki/LaTeX/Tables}{Wikibooks}.
+
+We can continue here but... \newpage
+sometimes a clear page in our life is much better.
+
+\vspace{150pt}
+
+{\LARGE This page is left blank intentionally} \\
+
+
+\newpage
+
+\section{Images and Figures}
+
+We can include images like:
+
+\begin{figure}[H]
+	\centering
+	\caption{GTA}
+	\label{fig:gta}
+	\includegraphics[width=120pt]{gta.jpg}
+\end{figure}
+
+scale them relative to page width
+
+\begin{figure}[H]
+	\centering
+	\caption{GTA2}
+	\label{fig:gta2}
+	\includegraphics[width=.65\textwidth]{gta.jpg} % scale 75%
+\end{figure}
+
+or even we can include PDFs (tip: Save SVG images as PDF) and they can scale (try to zoom in, it will not get pixelated)
+
+\begin{figure}[H]
+	\centering
+	\caption{Linux's mascot: Tux}
+	\label{fig:tux}
+	\includegraphics[width=.30\textwidth]{tux.pdf} % scale 75%
+\end{figure}
+
+\newpage
+
+\section{Inserting Code Pieces}
+\subsection{Pseudocode}
+\begin{algorithm}[H]
+	\caption{The depth first search algorithm}
+	\label{algo:dfs}
+	\begin{algorithmic}
+	\State \textbf{Graph} $G$
+	\State \textbf{Node} $start$
+	\Function{Depth-First-Search}{$G$, $start$}
+		\State \textbf{Tree} $ T $ \Comment The resulting search tree
+		\State \textbf{Stack} $ S $ \Comment An empty stack
+		\State \textbf{Set} $ V $ \Comment An empty set of visited nodes
+		\State \Call{set-root}{$ T $,$ current $}
+		\State \Call{push}{$ S $,$ start $}
+		\While{\Call{not-empty}{S}}
+			\State $current \gets$ \Call{pop}{$ S $} 
+			\If{\textbf{not} \Call{Contains}{$ V $, $ current $} }
+				\State \Call{insert}{$ V $, $ current $}
+				\ForAll{$ n $ : \Call{neighbors}{$ current $} }
+					\State \Call{push}{$ S $, $ n $}
+					\State \Call{insert-sub-node}{$ T $, $ current $, $ n $} 
+					\Comment Insert node to subtree of $ current $
+				\EndFor
+			\EndIf
+		\EndWhile
+		\State \Return $ T $
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\subsection{Real Code}
+
+\begin{lstlisting}[language=C++,caption=Depth first search in C++]
+class Graph
+{
+	set<int> nodes;
+	vector< vector<int> > edge_list;
+public:
+	void dfs();
+}
+
+\end{lstlisting}
+
+\end{document}
