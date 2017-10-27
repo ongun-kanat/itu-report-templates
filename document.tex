@@ -16,7 +16,10 @@
 % \usepackage[turkish,american]{babel}
 
 % Indent at section beginnings
-\usepackage{indentfirst}
+% \usepackage{indentfirst} % look at below for reverse
+% Paragraph spacings set parindent to 0
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt}
 
 % utf-8 support
 \usepackage[utf8]{inputenc}
@@ -66,6 +69,8 @@
 \date{December 22, 2016}
 
 \begin{document}
+% Fix Turkish fix hypenation
+%\shorthandoff{=}
 
 % For a generic title page one can use standard \maketitle command
 % It will use the title info above
