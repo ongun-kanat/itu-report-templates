@@ -1,0 +1,217 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: ITU Bilgisayar Muhendisligi Staj Raporu
+%
+% Author: N.Ahmet BASTUG
+%
+% Must be compiled with xelatex in order to use Times New Roman font.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=20mm,
+  bottom=20mm,
+  left=25mm,
+  right=25mm
+}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{ulem}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage[turkish]{babel}
+%% \usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large}{\bfseries}
+\renewcommand{\baselinestretch}{1.5}
+\setmainfont{Times New Roman}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Buradaki bilgileri kendi bilgileriniz ile degistirin.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\isim}{Nizameddin Ahmet BAŞTUĞ}
+\newcommand{\id}{150140704}
+\newcommand{\mail}{bastugn@itu.edu.tr}
+
+\begin{document}
+\pagenumbering{gobble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KAPAK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+  \centering
+  \underline{\bfseries İSTANBUL TEKNİK ÜNİVERSİTESİ} \\
+  \underline{\bfseries Bilgisayar ve Bilişim Fakültesi}
+  \vfill
+      {\bfseries STAJ KONUSU SATIR 1} \\
+      {\bfseries STAJ KONUSU SATIR 2} \\
+      {\bfseries STAJ KONUSU SATIR 3}
+      \vfill
+          {\Large\bfseries STAJ} \\
+          {\bfseries \isim} \\
+          {\bfseries \id}
+      \vfill
+  {\bfseries YAZ / \the\year}
+  
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RAPOR BILGILERI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\centering
+{\bfseries İstanbul Teknik Üniversitesi} \\
+{\bfseries Bilgisayar ve Bilişim Fakültesi} \\
+{\bfseries STAJ RAPORU} \\[1\baselineskip] \par}
+\begin{minipage}[t]{.3\textwidth}
+  \begin{flushright}
+    Akademik Yıl: \\
+    Staj Yapılan Dönem:
+  \end{flushright}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[t]{.7\textwidth}
+  \the\year\\
+ $\boxtimes$ Yaz  $\square$ Bahar  $\square$ Güz \\ 
+\end{minipage}
+
+{\centering
+  \textcolor{red}{\bfseries \ul{ Öğrenci ile İlgili Bilgiler}}
+  \\[1\baselineskip]
+  \par}
+\begin{minipage}[t]{.3\textwidth}
+  \vspace{0pt}
+  \begin{flushright}
+  Adı ve Soyadı: \\
+  Öğrenci Numarası: \\
+  Bölüm: \\
+  Program: \\ 
+  E-posta Adresi: \\
+  (Cep) Tel No: \\
+  ÇAP Öğrencisi misiniz? \\[2\baselineskip]
+  Mezuniyet durumunda mısınız? \\[1\baselineskip]
+  Yaz okulunda ders alıyor musunuz? \\
+  \end{flushright}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[t]{.7\textwidth}
+  \vspace{0pt}
+  \isim\\
+  \id\\
+  Bilgisayar Mühendisliği \\
+  \%30 İngilizce \\
+  \mail\\
+  +90 $($530$)$ 544 8486 \\
+  $\square$ Evet $($ÇAP Yaptığınız Fakülte/Bölüm:\underline{\hspace{3cm}}$)$ \\
+  $\boxtimes$ Hayır \\[1\baselineskip]
+  $\square$ Evet \\
+  $\boxtimes$ Hayır \\[1\baselineskip]
+  $\square$ Evet $($Ders sayısı:\textunderscore$)$ \\
+  $\boxtimes$ Hayır \\
+\end{minipage}
+
+{\centering
+  \textcolor{red}{\bfseries \ul{Öğrencinin Çalıştıği Kurum ile İlgili Bilgiler}}
+  \\[1\baselineskip]
+  \par}
+
+\begin{minipage}[t]{.3\textwidth}
+  \begin{flushright}
+      İsmi: \\
+      Birimi: \\
+      Web Adresi: \\
+      Kısa Adresi:
+  \end{flushright}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[t]{.7\textwidth}
+  Firma ismi \\
+  Yazılım \\
+  firma mail \\
+  firma adres 1 \\
+  firma adres 2 \\
+  firma adres 3
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% YETKILI KISI BILGILERI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+    {\centering
+  \textcolor{red}{\bfseries \ul{Yetkili Kişi ile ilgili bilgiler}}
+  \\[1\baselineskip]
+  \par}
+
+\begin{minipage}[t]{.3\textwidth}
+  \begin{flushright}
+      Bölümü: \\
+      Ünvanı: \\
+      Adı Soyadı: \\
+      (Kurumsal) E-posta: \\
+      (Kurumsal) Tel. No:
+  \end{flushright}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[t]{.7\textwidth}
+  Bolum \\
+  Unvan \\
+  isim \\
+  mail \\
+  telefon \\[2\baselineskip]
+\end{minipage}
+
+{\centering
+  \textcolor{red}{\bfseries \ul{Yapılan i\c{s} ile ilgili bilgiler}}
+  \\[1\baselineskip]
+  \par}
+
+\begin{minipage}[t]{.4\textwidth}
+  \begin{flushright}
+    Staj Yeri: \\[1\baselineskip]
+    Staj Başlangıç Tarihi: \\
+    Staj Bitiş Tarihi: \\
+    Stajda calışılan net gün sayısı: \\
+    Staj süresince sigortanız var mıydı?
+  \end{flushright}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[t]{.6\textwidth}
+  $\boxtimes$ Türkiye \\
+  $\square$ Yurtdışı \\
+  14.08.2018 \\
+  14.09.2018 \\
+  20 \\
+  $\boxtimes$ Evet, İTÜ tarafından sigortalandım. \\
+  $\square$ Evet, işyeri tarafından sigortalandım. \\
+  $\square$ Hayır, yurtdışı stajı yaptım. \\
+  $\square$ Hayır.
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ASIL RAPOR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagenumbering{arabic}
+\section*{KURULUŞ HAKKINDA BİLGİLER}
+\blindtext
+\section*{GİRİŞ}
+\blindtext
+\section*{STAJ PROJESİ TANIMI ve ANALİZİ}
+\blindtext
+\section*{SONUÇ}
+\blindtext
+\section*{REFERANSLAR}
+\blindtext
+\section*{EKLER}
+\blindtext
+
+\end{document}
+
